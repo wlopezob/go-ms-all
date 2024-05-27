@@ -1,0 +1,5 @@
+go 1.21.9
+
+use ./firstendpoint
+use ./tutorial
+use ./restapiv1
