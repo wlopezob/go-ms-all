@@ -11,6 +11,8 @@ go run .
 go get -u github.com/gin-gonic/gin
 
 ## install air
+```
 go install github.com/cosmtrek/air@latest
 air -v
 air init #add automatic .air.toml
+```
