@@ -16,3 +16,6 @@ go install github.com/cosmtrek/air@latest
 air -v
 air init #add automatic .air.toml
 ```
+
+## install driver mysql
+go get -u github.com/go-sql-driver/mysql
