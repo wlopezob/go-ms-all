@@ -25,7 +25,6 @@ func GetAlbumns(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, albums)
 }
 
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:1336252733.
 func PostAlbums(c *gin.Context) {
 	var newAlbum album
 	c.BindJSON(&newAlbum)

@@ -26,5 +26,27 @@ func NewMySQLStorage(cfg mysql.Config) *MySQLStorage{
 }
 
 func (s *MySQLStorage) Init() (*sql.DB, error){
-	return s.db, nil
+	err := s.createUsersTable()
+	return s.db, err
 }
+
+func (s * MySQLStorage) createUsersTable() error {
+	_, err := s.db.Exec(`
+			CREATE TABLE IF NOT EXISTS users (
+				id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+				email VARCHAR(255) NOT NULL,
+				firstName VARCHAR(255) NOT NULL,
+				lastName VARCHAR(255) NOT NULL,
+				password VARCHAR(255) NOT NULL,
+				createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+				PRIMARY KEY (id),
+				UNIQUE KEY (email)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+	`)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+

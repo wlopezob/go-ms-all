@@ -17,6 +17,8 @@
     extensions = [
       "golang.go"
       "rangav.vscode-thunder-client"
+      "cweijan.dbclient-jdbc"
+      "cweijan.vscode-mysql-client2"
     ];
     # Enable previews and customize configuration
     previews = {

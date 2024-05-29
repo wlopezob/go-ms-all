@@ -1,6 +1,10 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"log"
+
+	"github.com/gin-gonic/gin"
+)
 
 type APIServer struct {
 	addr  string
@@ -29,5 +33,8 @@ func (s *APIServer) Serve() {
 			"message": "pong",
 		})
 	})
+	taskService := NewTaskService(s.store)
+	taskService.RegisterRoutes(api)
+	log.Println("Starting the API server at", s.addr)
 	r.Run(s.addr)
 }
