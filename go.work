@@ -1,5 +1,9 @@
-go 1.21.9
+go 1.21.10
 
 use ./firstendpoint
+
 use ./tutorial
+
 use ./restapiv1
+
+use ./hexagonal01
